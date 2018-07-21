@@ -1,16 +1,14 @@
 import React from 'react'
-import Input from '../../Input/Input.display'
-import Button from '../../Button/Button.display'
+import { Redirect } from 'react-router-dom'
+import Select from '../Controls/Select/Select.display'
+import Error from '../Error/Error'
+import Button from '../Button/Button.display'
 import { css } from 'emotion'
 
-class RSVP extends React.Component {
+class Rsvp extends React.Component {
   state = {
-    rsvp: true,
+    selected: -1,
     loading: false
-  }
-
-  onChange = () => {
-    this.setState({ [input]: value })
   }
 
   handleClick = () => {
@@ -25,26 +23,41 @@ class RSVP extends React.Component {
       padding: 0 10px;
     `
 
-    const name = css`
+    const rsvp = css`
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
       margin: 0 auto;
       max-width: 600px;
     `
+
+    const options = [
+      {
+        text: 'Yes'
+      },
+      {
+        text: 'No'
+      }
+    ]
 
     return (
       <React.Fragment>
         {(this.state.success && this.state.rsvp) && <Redirect to='/seats'/>}
         {(this.state.success && !this.state.rsvp) && <Redirect to='/receptions'/>}
         {this.state.failure && <Error />}
-        <h3 className={welcome}>Welcome! Tell us your name.</h3>
-        <div className={name}>
+        <h3 className={welcome}>Will you be joining us?</h3>
+        <div className={rsvp}>
+
+          <Select 
+            options={options}
+            selected={this.state.selected}
+          />
           
           <Button
             text='Next'
             hasArrow
             _onClick={this.handleClick}
             loading={this.state.loading}
+            disabled={this.state.selected > 0}
           />
         </div>
       </React.Fragment>
@@ -52,4 +65,4 @@ class RSVP extends React.Component {
   }
 }
 
-export default Name
+export default Rsvp

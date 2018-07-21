@@ -1,6 +1,7 @@
 import React from 'react'
-import Input from '../../Input/Input.display'
-import Button from '../../Button/Button.display'
+import { Redirect } from 'react-router-dom'
+import Input from '../Controls/Input/Input.display'
+import Button from '../Button/Button.display'
 import { css } from 'emotion'
 
 class Name extends React.Component {
@@ -35,6 +36,7 @@ class Name extends React.Component {
 
     return (
       <React.Fragment>
+        {this.state.success && <Redirect to='/rsvp'/>}
         <h3 className={welcome}>Welcome! Tell us your name.</h3>
         <div className={name}>
           <Input 

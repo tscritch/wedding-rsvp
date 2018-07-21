@@ -3,10 +3,10 @@ import { css } from 'emotion'
 import Arrow from '../Icons/Arrow'
 import Spinner from '../Icons/Spinner'
 
-export default ({ _onClick, width, text, hasArrow, loading }) => {
+export default ({ _onClick, width, text, hasArrow, loading, disabled }) => {
   const button = css`
     align-items: center;
-    background: #000000;
+    background: ${disabled ? '#eee' : '#000000'};
     border: none;
     box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
     color: #ffffff;
@@ -55,6 +55,7 @@ export default ({ _onClick, width, text, hasArrow, loading }) => {
     <button
       className={button}
       onClick={_onClick}
+      disabled={disabled}
     >
       { loading ? <Spinner /> : buttonWithText }
     </button>

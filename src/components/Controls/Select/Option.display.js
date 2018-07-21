@@ -1,0 +1,33 @@
+import React from 'react'
+import { css } from 'emotion'
+
+export default ({ _onClick, text, title, selected }) => {
+  const option = css`
+    font-family: 'Raleway', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    min-width: 100px;
+    .text {
+      display: inline-block;
+    }
+  `
+
+  const bubble = css`
+    border: 3px solid #000;
+    border-radius: 20px;
+    background-color: ${selected ? '#000' : '#fff'};
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+  `
+
+  return (
+    <div className={option} onClick={_onClick}>
+      <div className={bubble} />
+      <div className='text'>
+        { title && <h1>{title}</h1> }
+        <p>{text}</p>
+      </div>
+    </div>
+  )
+}
