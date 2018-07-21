@@ -1,11 +1,18 @@
 import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
+import Layout from '../Layout/Layout.display'
+import Name from '../Name/Name.display'
 
 class App extends React.Component {
   render () {
     return (
       <Router>
-        <Route ></Route>
+        <Layout>
+          <Route exact path='/' component={Name} />
+          { /* <Route exact path='/response' component={Response} />
+              <Route exact path='/registries' component={Registries} />
+              <Route exact path='/about-us' component={About} /> */ }
+        </Layout>
       </Router>
     )
   }
