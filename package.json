@@ -20,7 +20,12 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "deploy": "npm run build && firebase deploy",
+    "docz:dev": "docz dev",
+    "docz:build": "docz build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "docz": "^0.6.2"
   }
 }

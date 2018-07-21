@@ -3,14 +3,13 @@ import Input from '../../Input/Input.display'
 import Button from '../../Button/Button.display'
 import { css } from 'emotion'
 
-class Name extends React.Component {
+class RSVP extends React.Component {
   state = {
-    first_name: '',
-    last_name: '',
+    rsvp: true,
     loading: false
   }
 
-  onChange = (value, input) => {
+  onChange = () => {
     this.setState({ [input]: value })
   }
 
@@ -35,19 +34,13 @@ class Name extends React.Component {
 
     return (
       <React.Fragment>
+        {(this.state.success && this.state.rsvp) && <Redirect to='/seats'/>}
+        {(this.state.success && !this.state.rsvp) && <Redirect to='/receptions'/>}
+        {this.state.failure && <Error />}
         <h3 className={welcome}>Welcome! Tell us your name.</h3>
         <div className={name}>
-          <Input 
-            value={this.state.name}
-            _onChange={(e) => this.onChange(e.target.value, 'first_name')}
-            placeholder='First Name'
-          />
-          <Input
-            value={this.state.name}
-            _onChange={(e) => this.onChange(e.target.value, 'last_name')}
-            placeholder='Last Name'
-          />
-          <Button 
+          
+          <Button
             text='Next'
             hasArrow
             _onClick={this.handleClick}
