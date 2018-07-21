@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Layout from '../Layout/Layout.display'
-import Name from '../Name/Name.display'
+import Name from '../Pages/Name/Name.display'
 
 class App extends React.Component {
   render () {

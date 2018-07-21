@@ -5,7 +5,7 @@ export default () => {
   const title = css`
     color: #000000;
     font-family: 'Playfair Display', serif;
-    margin: 60px 0 80px;
+    margin-top: 60px;
     text-align: center;
     h1 {
       font-size: 32px;
