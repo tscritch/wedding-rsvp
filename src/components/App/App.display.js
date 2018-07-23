@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import Name from '../Pages/Name.display'
+import Name from '../Pages/Name/Name.container'
 import Rsvp from '../Pages/Rsvp.display'
 import OurStory from '../Pages/OurStory.display'
 

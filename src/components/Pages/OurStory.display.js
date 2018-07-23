@@ -1,10 +1,12 @@
 import React from 'react'
+import withLayout from '../Layout/Layout.display'
 import { css } from 'emotion'
 
-export default () => {
+const OurStory = () => {
   const story = css`
     font-family: 'Raleway', sans-serif;
-    max-width: 600px;
+    margin-bottom: 80px;
+    max-width: 600px; 
   `
 
   return (
@@ -24,3 +26,5 @@ export default () => {
     </React.Fragment>
   )
 }
+
+export default withLayout(OurStory)

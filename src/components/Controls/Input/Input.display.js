@@ -1,7 +1,7 @@
 import React from 'react'
 import { css } from 'emotion'
 
-export default ({ _onChange, placeholder }) => {
+export default ({ _onChange, value, placeholder }) => {
   const input = css`
     -webkit-appearance: none;
     background: #FFFFFF;
@@ -26,6 +26,7 @@ export default ({ _onChange, placeholder }) => {
     <input
       className={input}
       onChange={_onChange}
+      value={value}
       placeholder={placeholder}
     />
   )

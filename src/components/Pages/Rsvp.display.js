@@ -4,6 +4,7 @@ import Select from '../Controls/Select/Select.display'
 import Error from '../Error/Error'
 import Button from '../Button/Button.display'
 import { css } from 'emotion'
+import withLayout from '../Layout/Layout.display'
 
 class Rsvp extends React.Component {
   state = {
@@ -65,4 +66,4 @@ class Rsvp extends React.Component {
   }
 }
 
-export default Rsvp
+export default withLayout(Rsvp)
