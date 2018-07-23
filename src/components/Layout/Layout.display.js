@@ -3,7 +3,7 @@ import Title from './Title'
 import Footer from './Footer'
 import { css } from 'emotion'
 
-export default ({ children }) => {
+export default (component) => {
   const layout = css`
     align-items: center;
     display: flex;
@@ -16,9 +16,9 @@ export default ({ children }) => {
     <div className={layout}>
       <Title />
       <div>
-        {children}
+        {component}
       </div>
-      <Footer link='about-us' text='About Us'/>
+      <Footer link='our-story' text='Our Story' />
     </div>
   )
 }

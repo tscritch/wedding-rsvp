@@ -8,6 +8,7 @@ export default ({ _onClick, width, text, hasArrow, loading, disabled }) => {
     align-items: center;
     background: ${disabled ? '#eee' : '#000000'};
     border: none;
+    border-radius: 50px;
     box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
     color: #ffffff;
     display: flex;

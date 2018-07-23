@@ -2,6 +2,7 @@ import React from 'react'
 import { Redirect } from 'react-router-dom'
 import Input from '../Controls/Input/Input.display'
 import Button from '../Button/Button.display'
+import withLayout from '../Layout/Layout.display'
 import { css } from 'emotion'
 
 class Name extends React.Component {
@@ -61,4 +62,4 @@ class Name extends React.Component {
   }
 }
 
-export default Name
+export default withLayout(Name)

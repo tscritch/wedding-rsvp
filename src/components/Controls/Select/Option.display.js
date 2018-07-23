@@ -3,12 +3,22 @@ import { css } from 'emotion'
 
 export default ({ _onClick, text, title, selected }) => {
   const option = css`
+    align-items: center;
     font-family: 'Raleway', sans-serif;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
+    margin: 20px 0;
     min-width: 100px;
     .text {
-      display: inline-block;
+      margin-left: 20px;
+      h1 {
+        font-size: 16px;
+        margin: 0;
+      }
+      p {
+        font-size: 16px;
+        margin: 0;
+      }
     }
   `
 
