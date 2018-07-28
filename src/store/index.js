@@ -10,13 +10,15 @@ import nameFetch from './reducers/nameFetch'
 export default () => {
   const reducer = combineReducers({ nameFields, nameFetch })
 
-  const middleware = applyMiddleware(saga(), thunk)
+  const sagaMiddleware = saga()
+
+  const middleware = applyMiddleware(sagaMiddleware, thunk)
 
   const store = createStore(reducer, compose(middleware,
     window.devToolsExtension ? window.devToolsExtension() : f => f
   ))
 
-  initSagas()
+  initSagas(sagaMiddleware)
 
   return store
 }

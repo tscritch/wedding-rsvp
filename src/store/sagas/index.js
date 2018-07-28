@@ -1,1 +1,1 @@
-export { findName } from './name'
+export { findGuestByName } from './name'
