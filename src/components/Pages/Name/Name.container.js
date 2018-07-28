@@ -1,5 +1,5 @@
 import { changeFirstName, changeLastName } from '../../../store/actions/nameFields'
-import { connect } from '../../../../../../../Library/Caches/typescript/2.9/node_modules/@types/react-redux'
+import { connect } from 'react-redux'
 import Name from './Name.display'
 import withLayout from '../../Layout/Layout.display'
 
