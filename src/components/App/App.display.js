@@ -1,5 +1,5 @@
-import React from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import React from '../../../../../../Library/Caches/typescript/2.9/node_modules/@types/react'
+import { BrowserRouter as Router, Route } from '../../../../../../Library/Caches/typescript/2.9/node_modules/@types/react-router-dom'
 import Name from '../Pages/Name/Name.container'
 import Rsvp from '../Pages/Rsvp.display'
 import OurStory from '../Pages/OurStory.display'

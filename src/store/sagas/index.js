@@ -1,0 +1,1 @@
+export { findName } from './name'

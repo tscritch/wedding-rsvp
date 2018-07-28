@@ -1,12 +1,22 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
+import saga from 'redux-saga'
 
-import name from './reducers/name'
+import { initSagas } from './initSagas'
 
-const reducer = combineReducers({ name })
+import nameFields from './reducers/nameFields'
+import nameFetch from './reducers/nameFetch'
 
-const middleware = applyMiddleware(thunk)
+export default () => {
+  const reducer = combineReducers({ nameFields, nameFetch })
 
-export default createStore(reducer, compose(middleware,
-  window.devToolsExtension ? window.devToolsExtension() : f => f
-))
+  const middleware = applyMiddleware(saga(), thunk)
+
+  const store = createStore(reducer, compose(middleware,
+    window.devToolsExtension ? window.devToolsExtension() : f => f
+  ))
+
+  initSagas()
+
+  return store
+}
