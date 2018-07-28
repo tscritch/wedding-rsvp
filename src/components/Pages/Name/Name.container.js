@@ -1,12 +1,12 @@
-import { changeFirstName, changeLastName } from '../../../store/actions/name'
-import { connect } from 'react-redux'
+import { changeFirstName, changeLastName } from '../../../store/actions/nameFields'
+import { connect } from '../../../../../../../Library/Caches/typescript/2.9/node_modules/@types/react-redux'
 import Name from './Name.display'
 import withLayout from '../../Layout/Layout.display'
 
-const mapStateToProps = ({ name }) => ({
-  firstName: name.firstName,
-  lastName: name.lastName,
-  loading: name.loading
+const mapStateToProps = ({ nameFields: { firstName, lastName, loading } }) => ({
+  firstName,
+  lastName,
+  loading
 })
 
 const mapDispatchToProps = dispatch => ({

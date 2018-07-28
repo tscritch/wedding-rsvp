@@ -1,4 +1,4 @@
-import React from 'react'
+import React from '../../../../../../../Library/Caches/typescript/2.9/node_modules/@types/react'
 // import { Redirect } from 'react-router-dom'
 import Input from '../../Controls/Input/Input.display'
 import Button from '../../Button/Button.display'

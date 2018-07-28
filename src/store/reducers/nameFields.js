@@ -1,4 +1,4 @@
-import { FIRST_NAME_CHANGE, LAST_NAME_CHANGE } from '../actions/name'
+import { FIRST_NAME_CHANGE, LAST_NAME_CHANGE } from '../actions/nameFields'
 
 const initialState = {
   firstName: '',

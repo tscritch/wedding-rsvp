@@ -1,5 +1,5 @@
-import React from 'react'
-import { Redirect } from 'react-router-dom'
+import React from '../../../../../../Library/Caches/typescript/2.9/node_modules/@types/react'
+import { Redirect } from '../../../../../../Library/Caches/typescript/2.9/node_modules/@types/react-router-dom'
 import Select from '../Controls/Select/Select.display'
 import Error from '../Error/Error'
 import Button from '../Button/Button.display'

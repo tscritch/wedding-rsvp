@@ -3,9 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "apollo-cache-inmemory": "^1.2.5",
-    "apollo-client": "^2.3.5",
-    "apollo-link-http": "^1.5.4",
     "autoprefixer": "7.1.6",
     "babel-core": "6.26.0",
     "babel-eslint": "7.2.3",
@@ -29,8 +26,6 @@
     "extract-text-webpack-plugin": "3.0.2",
     "file-loader": "1.1.5",
     "fs-extra": "3.0.1",
-    "graphql": "^0.13.2",
-    "graphql-tag": "^2.9.2",
     "html-webpack-plugin": "2.29.0",
     "jest": "20.0.4",
     "object-assign": "4.1.1",
@@ -39,13 +34,13 @@
     "promise": "8.0.1",
     "raf": "3.4.0",
     "react": "^16.4.1",
-    "react-apollo": "^2.1.9",
     "react-dev-utils": "^5.0.1",
     "react-dom": "^16.4.1",
     "react-emotion": "^9.2.6",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
     "redux": "^4.0.0",
+    "redux-saga": "^0.16.0",
     "redux-thunk": "^2.3.0",
     "resolve": "1.6.0",
     "style-loader": "0.19.0",
@@ -59,9 +54,6 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "deploy": "npm run build && firebase deploy",
-    "docz:dev": "docz dev",
-    "docz:build": "docz build",
     "test": "node scripts/test.js --env=jsdom"
   },
   "devDependencies": {
