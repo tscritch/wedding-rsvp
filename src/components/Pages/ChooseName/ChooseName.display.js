@@ -4,7 +4,11 @@ import Select from '../../Controls/Select/Select.display'
 import Button from '../../Button/Button.display'
 import { css } from 'emotion'
 
-export default ({ guests, choice, chosen, _chooseGuest, _submitParty }) => {
+export default ({ guest, guests, guestChoice, _chooseGuest, _submitParty }) => {
+  if (!guests) {
+    return (<Redirect to='/' />)
+  }
+
   const welcome = css`
     font-family: 'Raleway', sans-serif;
     font-size: 24px;
@@ -14,7 +18,7 @@ export default ({ guests, choice, chosen, _chooseGuest, _submitParty }) => {
 
   const choices = css`
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     margin: 0 auto;
     max-width: 600px;
   `
@@ -25,18 +29,18 @@ export default ({ guests, choice, chosen, _chooseGuest, _submitParty }) => {
 
   return (
     <React.Fragment>
-      { chosen && <Redirect to='/rsvp' /> }
+      { guest && <Redirect to='/rsvp' /> }
       <h3 className={welcome}>Choose your party:</h3>
       <div className={choices}>
         <Select
           options={options}
-          select={_chooseGuest}
-          selected={choice}
+          _select={_chooseGuest}
+          selected={guestChoice}
         />
         <Button
           text='Next'
           hasArrow
-          _onClick={() => { _submitParty(guests[choice]) }}
+          _onClick={() => { _submitParty(guests[guestChoice]) }}
         />
       </div>
     </React.Fragment>
