@@ -33,8 +33,8 @@ export default ({ guest, rsvpChoice, rsvped, loading, message, _chooseRsvp, _sub
 
   return (
     <React.Fragment>
-      { (rsvped && guest.rsvp) && <Redirect to='/seats' /> }
-      { (rsvped && !guest.rsvp) && <Redirect to='/receptions' /> }
+      { (rsvped && guest.rsvp === true) && <Redirect to='/seats' /> }
+      { (rsvped && guest.rsvp === false) && <Redirect to='/receptions' /> }
       { message && <Error message={message} /> }
       <h3 className={welcome}>Will you be joining us?</h3>
       <div className={rsvp}>
@@ -50,7 +50,7 @@ export default ({ guest, rsvpChoice, rsvped, loading, message, _chooseRsvp, _sub
           hasArrow
           loading={loading}
           disabled={rsvpChoice < 0}
-          _onClick={() => { _submitRsvp(options[rsvpChoice].value) }}
+          _onClick={() => { _submitRsvp(guest._id, options[rsvpChoice].value) }}
         />
       </div>
     </React.Fragment>
