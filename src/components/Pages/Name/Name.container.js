@@ -3,11 +3,11 @@ import { connect } from 'react-redux'
 import Name from './Name.display'
 import withLayout from '../../Layout/Layout.display'
 
-const mapStateToProps = ({ name: { lastName, loading, guests, hasMany, message } }) => ({
+const mapStateToProps = ({ name: { lastName, loading, guests, message }, guest: { guest } }) => ({
   lastName,
   loading,
+  guest,
   guests,
-  hasMany,
   message
 })
 

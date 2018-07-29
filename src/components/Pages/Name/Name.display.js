@@ -5,7 +5,7 @@ import Button from '../../Button/Button.display'
 import Error from '../../Error/Error'
 import { css } from 'emotion'
 
-export default ({ lastName, loading, guests, hasMany, message, _changeLastName, _submitName }) => {
+export default ({ lastName, loading, guest, guests, message, _changeLastName, _submitName }) => {
   const welcome = css`
     font-family: 'Raleway', sans-serif;
     font-size: 24px;
@@ -22,8 +22,8 @@ export default ({ lastName, loading, guests, hasMany, message, _changeLastName, 
 
   return (
     <React.Fragment>
-      { (guests && hasMany) && <Redirect to='/rsvp' /> }
-      { (guests && !hasMany) && <Redirect to='/rsvp' /> }
+      { guests && <Redirect to='/choose-name' /> }
+      { guest && <Redirect to='/rsvp' /> }
       <h3 className={welcome}>Welcome! Tell us your name.</h3>
       <div className={name}>
         <Input
