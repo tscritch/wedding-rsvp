@@ -5,7 +5,13 @@ import { NAME_FETCH_START, nameFetchSuccededWithMany, nameFetchNotFound, nameFet
 import { selectGuest } from '../actions/guest'
 
 export function * findGuestByName () {
-  const { name } = yield take(NAME_FETCH_START)
+  while (true) {
+    const { name } = yield take(NAME_FETCH_START)
+    yield call(fetchName, name)
+  }
+}
+
+function * fetchName (name) {
   try {
     const response = yield call(api.findGuestByName, name)
     const data = yield apply(response, response.json)

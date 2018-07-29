@@ -26,21 +26,21 @@ export default (state = initialState, action) => {
     case NAME_FETCH_WITH_MANY:
       return {
         ...state,
+        loading: false,
         hasMany: true,
-        guests: action.guests,
-        loading: false
+        guests: action.guests
       }
     case NAME_FETCH_NOT_FOUND:
       return {
         ...state,
-        message: action.message,
-        loading: false
+        loading: false,
+        message: action.message
       }
     case NAME_FETCH_FAILED:
       return {
         ...state,
-        message: action.message,
-        loading: false
+        loading: false,
+        message: action.message
       }
     default:
       return state
