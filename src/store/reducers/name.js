@@ -27,7 +27,6 @@ export default (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        hasMany: true,
         guests: action.guests
       }
     case NAME_FETCH_NOT_FOUND:

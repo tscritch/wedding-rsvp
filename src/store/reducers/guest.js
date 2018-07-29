@@ -1,4 +1,4 @@
-import { CHOOSE_GUEST, SELECT_GUEST } from '../actions/guest'
+import { CHOOSE_GUEST, CHOOSE_RSVP, SELECT_GUEST } from '../actions/guest'
 
 const initialState = {}
 
@@ -7,7 +7,12 @@ export default (state = initialState, action) => {
     case CHOOSE_GUEST:
       return {
         ...state,
-        choice: action.index
+        guestChoice: action.index
+      }
+    case CHOOSE_RSVP:
+      return {
+        ...state,
+        rsvpChoice: action.index
       }
     case SELECT_GUEST:
       return {
