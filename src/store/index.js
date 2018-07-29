@@ -4,11 +4,10 @@ import saga from 'redux-saga'
 
 import { initSagas } from './initSagas'
 
-import nameFields from './reducers/nameFields'
-import nameFetch from './reducers/nameFetch'
+import name from './reducers/name'
 
 export default () => {
-  const reducer = combineReducers({ nameFields, nameFetch })
+  const reducer = combineReducers({ name })
 
   const sagaMiddleware = saga()
 

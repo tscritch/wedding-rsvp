@@ -1,15 +1,23 @@
-import { call } from 'redux-saga/effects'
-import * as guest from '../../api/guests'
+import { apply, call, put, take } from 'redux-saga/effects'
+import * as api from '../../api/guests'
+
+import { NAME_FETCH_START, nameFetchSuccededWithMany, nameFetchNotFound, nameFetchFail } from '../actions/name'
+import { selectGuest } from '../actions/guest'
 
 export function * findGuestByName () {
+  const { name } = yield take(NAME_FETCH_START)
   try {
-    const guests = yield call(guest.findGuestByName())
+    const response = yield call(api.findGuestByName, name)
+    const data = yield apply(response, response.json)
+    console.log(data)
+    if (data.length > 1) {
+      yield put(nameFetchSuccededWithMany(data))
+    } else if (data.length === 1) {
+      yield put(selectGuest(data[0]))
+    } else {
+      yield put(nameFetchNotFound(data.message))
+    }
+  } catch (e) {
+    yield put(nameFetchFail(e.message))
   }
-  catch (e) {
-
-  }
-}
-
-export function * guestName () {
-  const { guests } = yield take()
 }

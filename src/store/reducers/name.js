@@ -1,28 +1,32 @@
 import {
+  LAST_NAME_CHANGE,
   NAME_FETCH_START,
-  NAME_FETCH_WITH_ONE,
   NAME_FETCH_WITH_MANY,
   NAME_FETCH_NOT_FOUND,
-  NAME_FETCH_FAILED } from '../actions/nameFetch'
+  NAME_FETCH_FAILED
+} from '../actions/name'
 
-const initialState = {}
+const initialState = {
+  lastName: ''
+}
 
 export default (state = initialState, action) => {
   switch (action.type) {
+    case LAST_NAME_CHANGE:
+      return {
+        ...state,
+        lastName: action.text
+      }
     case NAME_FETCH_START:
       return {
         ...state,
-        loading: true
-      }
-    case NAME_FETCH_WITH_ONE:
-      return {
-        ...state,
-        guest: action.guest,
-        loading: false
+        loading: true,
+        message: ''
       }
     case NAME_FETCH_WITH_MANY:
       return {
         ...state,
+        hasMany: true,
         guests: action.guests,
         loading: false
       }
