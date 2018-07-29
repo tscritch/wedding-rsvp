@@ -1,10 +1,11 @@
 import React from 'react'
-// import { Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 import Input from '../../Controls/Input/Input.display'
 import Button from '../../Button/Button.display'
+import Error from '../../Error/Error'
 import { css } from 'emotion'
 
-export default ({ firstName, lastName, loading, _changeFirstName, _changeLastName, _submitName }) => {
+export default ({ lastName, loading, guests, hasMany, message, _changeLastName, _submitName }) => {
   const welcome = css`
     font-family: 'Raleway', sans-serif;
     font-size: 24px;
@@ -21,14 +22,10 @@ export default ({ firstName, lastName, loading, _changeFirstName, _changeLastNam
 
   return (
     <React.Fragment>
-      {/* this.state.success && <Redirect to='/rsvp'/> */}
+      { (guests && hasMany) && <Redirect to='/rsvp' /> }
+      { (guests && !hasMany) && <Redirect to='/rsvp' /> }
       <h3 className={welcome}>Welcome! Tell us your name.</h3>
       <div className={name}>
-        <Input
-          value={firstName}
-          _onChange={_changeFirstName}
-          placeholder='First Name'
-        />
         <Input
           value={lastName}
           _onChange={_changeLastName}
@@ -37,10 +34,11 @@ export default ({ firstName, lastName, loading, _changeFirstName, _changeLastNam
         <Button
           text='Next'
           hasArrow
-          _onClick={_submitName}
+          _onClick={() => { _submitName(lastName) }}
           loading={loading}
         />
       </div>
+      { message && <Error message={message} /> }
     </React.Fragment>
   )
 }

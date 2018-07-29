@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Name from '../Pages/Name/Name.container'
 import Rsvp from '../Pages/Rsvp.display'
 import OurStory from '../Pages/OurStory.display'
+import ChooseName from '../Pages/ChooseName/ChooseName.container'
 
 class App extends React.Component {
   render () {
@@ -10,8 +11,9 @@ class App extends React.Component {
       <Router>
         <React.Fragment>
           <Route exact path='/' component={Name} />
-          <Route exact path='/rsvp' component={Rsvp} />
-          <Route exact path='/our-story' component={OurStory} />
+          <Route path='/rsvp' component={Rsvp} />
+          <Route path='/our-story' component={OurStory} />
+          <Route path='/choose-name' component={ChooseName} />
           { /* <Route exact path='/response' component={Response} />
               <Route exact path='/registries' component={Registries} />
               <Route exact path='/about-us' component={About} /> */ }
