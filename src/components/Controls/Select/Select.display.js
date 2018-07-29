@@ -8,11 +8,11 @@ export default ({ options, selected, _select }) => {
   `
 
   const o = options.map((option, i) => {
-    return <Option 
+    return <Option
       key={i}
       text={option.text}
       title={option.title}
-      selected={ selected === i }
+      selected={selected === i}
       _onClick={() => _select(i)} />
   })
 
