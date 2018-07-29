@@ -5,7 +5,7 @@ import Error from '../../Error/Error'
 import Button from '../../Button/Button.display'
 import { css } from 'emotion'
 
-export default ({ guest, _submitRsvp }) => {
+export default ({ guest, rsvpChoice, rsvped, loading, message, _chooseRsvp, _submitRsvp }) => {
   const welcome = css`
     font-family: 'Raleway', sans-serif;
     font-size: 24px;
@@ -22,32 +22,35 @@ export default ({ guest, _submitRsvp }) => {
 
   const options = [
     {
-      text: 'Yes'
+      text: 'Yes',
+      value: true
     },
     {
-      text: 'No'
+      text: 'No',
+      value: false
     }
   ]
 
   return (
     <React.Fragment>
-      {(this.state.success && this.state.rsvp) && <Redirect to='/seats' />}
-      {(this.state.success && !this.state.rsvp) && <Redirect to='/receptions' />}
-      {this.state.failure && <Error />}
+      { (rsvped && guest.rsvp) && <Redirect to='/seats' /> }
+      { (rsvped && !guest.rsvp) && <Redirect to='/receptions' /> }
+      { message && <Error message={message} /> }
       <h3 className={welcome}>Will you be joining us?</h3>
       <div className={rsvp}>
 
         <Select
           options={options}
-          selected={this.state.selected}
+          selected={rsvpChoice}
+          _select={_chooseRsvp}
         />
 
-        { /* _onClick=_submitRsvp(options[choice].text) */ }
         <Button
           text='Next'
           hasArrow
-          loading={this.state.loading}
-          disabled={this.state.selected > 0}
+          loading={loading}
+          disabled={rsvpChoice < 0}
+          _onClick={() => { _submitRsvp(options[rsvpChoice].value) }}
         />
       </div>
     </React.Fragment>

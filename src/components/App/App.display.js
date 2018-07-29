@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Name from '../Pages/Name/Name.container'
-import Rsvp from '../Pages/Rsvp/Rsvp.display'
+import Rsvp from '../Pages/Rsvp/Rsvp.container'
 import OurStory from '../Pages/OurStory.display'
 import ChooseName from '../Pages/ChooseName/ChooseName.container'
 
