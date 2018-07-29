@@ -1,4 +1,4 @@
-import { CHOOSE_GUEST, CHOOSE_RSVP, SELECT_GUEST, SUBMIT_RSVP } from '../actions/guest'
+import { CHOOSE_GUEST, CHOOSE_RSVP, SELECT_GUEST, SUBMIT_RSVP_START, SUBMIT_RSVP_FAILED, SUBMIT_RSVP_SUCCEDED } from '../actions/guest'
 
 const initialState = {
   guestChoice: -1,
@@ -22,12 +22,25 @@ export default (state = initialState, action) => {
         ...state,
         guest: action.guest
       }
-    case SUBMIT_RSVP:
-      const guest = Object.assign({}, {rsvp: action.answer}, state.guest)
+    case SUBMIT_RSVP_START:
+      return {
+        ...state,
+        loading: true
+      }
+    case SUBMIT_RSVP_SUCCEDED:
+      const guest = Object.assign({}, state.guest, { rsvp: action.answer })
       console.log(guest)
       return {
         ...state,
+        loading: false,
+        rsvped: true,
         guest
+      }
+    case SUBMIT_RSVP_FAILED:
+      return {
+        ...state,
+        loading: false,
+        failure: true
       }
     default:
       return state
