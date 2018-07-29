@@ -9,6 +9,9 @@ export default ({ _onClick, text, title, selected }) => {
     justify-content: flex-start;
     margin: 20px 0;
     min-width: 100px;
+    &:hover {
+      cursor: pointer;
+    }
     .text {
       margin-left: 20px;
       h1 {

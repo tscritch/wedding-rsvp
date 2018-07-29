@@ -20,7 +20,8 @@ export default ({ _onClick, width, text, hasArrow, loading, disabled }) => {
     padding: 6px 10px;
     width: ${width || 150}px;
     transition: all 0.2s ease-in-out;
-    &:hover {
+    z-index: 10;
+    &:hover:not([disabled]) {
       cursor: pointer;
       box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
     }
