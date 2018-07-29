@@ -1,6 +1,6 @@
-import { chooseGuest } from '../../../store/actions/name'
+import { chooseGuest } from '../../../store/actions/guest'
 import { connect } from 'react-redux'
-import Name from './Name.display'
+import ChooseName from './ChooseName.display'
 import withLayout from '../../Layout/Layout.display'
 
 const mapStateToProps = ({ name: { guests } }) => ({
@@ -11,4 +11,4 @@ const mapDispatchToProps = dispatch => ({
   _chooseGuest: (guest) => dispatch(chooseGuest(guest))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(withLayout(Name))
+export default connect(mapStateToProps, mapDispatchToProps)(withLayout(ChooseName))
