@@ -1,13 +1,33 @@
-const uri = path => `http://localhost:3001/${path}`
+const uri = path => true ? `http://localhost:3001/${path}` : `https://wedding-rsvp-api.herokuapp.com/${path}`
 
 export const findGuestByName = name => {
   return fetch(uri(`guest/${name}`))
 }
 
-export const rsvpGuest = id => {
-  return fetch(uri(`guest/${id}/rsvp`))
+export const rsvpGuestById = (id, answer) => {
+  const data = {
+    rsvp: answer
+  }
+  const req = {
+    method: 'PUT',
+    body: JSON.stringify(data),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  }
+  return fetch(uri(`guest/${id}/rsvp`), req)
 }
 
-export const reserveSeatsForGuest = id => {
-  return fetch(uri(`guest/${id}/reserve-seats`))
+export const reserveSeatsForGuest = (id, reserveSeats) => {
+  const data = {
+    reserveSeats
+  }
+  const req = {
+    method: 'PUT',
+    body: JSON.stringify(data),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  }
+  return fetch(uri(`guest/${id}/reserve-seats`), req)
 }
