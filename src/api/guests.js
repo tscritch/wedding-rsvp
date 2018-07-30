@@ -1,4 +1,4 @@
-const uri = path => true ? `http://localhost:3001/${path}` : `https://wedding-rsvp-api.herokuapp.com/${path}`
+const uri = path => process.env.NODE_ENV !== 'production' ? `http://localhost:3001/${path}` : `https://wedding-rsvp-api.herokuapp.com/${path}`
 
 export const findGuestByName = name => {
   return fetch(uri(`guest/${name}`))
