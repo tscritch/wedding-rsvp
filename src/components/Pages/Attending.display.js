@@ -3,20 +3,20 @@ import withLayout from '../Layout/Layout.display'
 import Link from '../Link/Link'
 import { css } from 'emotion'
 
-const NotAttending = () => {
-  const ragrats = css`
+const Attending = () => {
+  const attending = css`
     font-family: 'Raleway', sans-serif;
     font-size: 24px;
     margin: 0 24px 26px;
     max-width: 600px;
-    text-align: center;
+    text-align: center; 
   `
 
   return (
     <React.Fragment>
-      <p className={ragrats}>
-        We're sorry you can't join us.<br /><br />
-        If you would still like to send us a gift we are registered at the following sites:
+      <p className={attending}>
+        You’re all set! We can’t to see you both there!<br /><br />
+        We are registered at the following sites:
       </p>
       <Link text={'Amazon'} url={'https://www.amazon.com/wedding/share/eden-and-tad'} />
       <Link text={'Wayfair'} url={'https://www.wayfair.com/registry/wedding/EdenAndTad'} />
@@ -24,4 +24,4 @@ const NotAttending = () => {
   )
 }
 
-export default withLayout(NotAttending)
+export default withLayout(Attending)
