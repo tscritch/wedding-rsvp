@@ -12,6 +12,12 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case SEAT_CHANGE:
+      if (!action.value) {
+        return {
+          ...state,
+          seatCount: ''
+        }
+      }
       const seatCount = parseInt(action.value[action.value.length - 1], 10)
       if (isNaN(seatCount)) {
         return state
