@@ -13,7 +13,7 @@ const mapStateToProps = ({ seats: { seatCount, loading, message, reserved }, gue
 
 const mapDispatchToProps = dispatch => ({
   _changeSeatCount: (e) => dispatch(changeSeatCount(e.target.value)),
-  _submitReservation: (reservedSeats) => dispatch(submitReservationStart(reservedSeats))
+  _submitReservation: (id, reservedSeats) => dispatch(submitReservationStart(id, reservedSeats))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(withLayout(Seats))

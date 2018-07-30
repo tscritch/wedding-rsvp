@@ -15,7 +15,7 @@ export default ({ _onChange, value, placeholder, error }) => {
     margin: 10px;
     padding: 18px;
     min-width: 200px;
-    ${error ? `box-shadow: 0 0 15px 0 #B62424` : ''}
+    ${error ? `box-shadow: 0 0 15px 0 #B62424;` : ''}
     &:focus, &:active {
       outline: none;
     }

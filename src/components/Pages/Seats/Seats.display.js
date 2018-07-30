@@ -10,7 +10,7 @@ export default ({ seatCount, loading, guest, message, reserved, _changeSeatCount
     font-family: 'Raleway', sans-serif;
     font-size: 24px;
     font-weight: normal;
-    padding: 0 10px;
+    padding: 0 24px;
   `
 
   const name = css`
@@ -20,26 +20,49 @@ export default ({ seatCount, loading, guest, message, reserved, _changeSeatCount
     max-width: 600px;
   `
 
-  return (
+  const oneSeat = (
     <React.Fragment>
-      {reserved && <Redirect to='/attending' /> }
       <h3 className={welcome}>
-        Great! We have reserverd {guest.seats > 1 ? `${guest.seats} seats` : '1 seat'} for you. How many of you will be attending?
+      Great! We have reserved one seat for you.
+      </h3>
+      <Button
+        hasArrow
+        loading={loading}
+        text='Next'
+        _onClick={() => { _submitReservation(guest._id, 1) }}
+      />
+    </React.Fragment>
+  )
+
+  const manySeats = (
+    <React.Fragment>
+      <h3 className={welcome}>
+        Great! We have reserved {guest.seats} seats for you.<br />
+        How many of you will be attending?
       </h3>
       <div className={name}>
         <Input
+          error={seatCount > guest.seats}
           value={seatCount}
           _onChange={_changeSeatCount}
-          placeholder='Seats'
+          placeholder='Number of Seats'
         />
         <Button
-          text='Next'
+          disabled={seatCount > guest.seats || !seatCount || seatCount < 0}
           hasArrow
-          _onClick={() => { _submitReservation(seatCount) }}
           loading={loading}
+          text='Next'
+          _onClick={() => { _submitReservation(guest._id, seatCount) }}
         />
       </div>
       { message && <Error message={message} /> }
+    </React.Fragment>
+  )
+
+  return (
+    <React.Fragment>
+      {reserved && <Redirect to='/attending' /> }
+      { guest.seats > 1 ? manySeats : oneSeat }
     </React.Fragment>
   )
 }

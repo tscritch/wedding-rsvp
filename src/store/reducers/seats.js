@@ -5,14 +5,20 @@ import {
   SUBMIT_RESERVATION_FAILED
 } from '../actions/seats'
 
-const initialState = {}
+const initialState = {
+  seatCount: ''
+}
 
 export default (state = initialState, action) => {
   switch (action.type) {
     case SEAT_CHANGE:
+      const seatCount = parseInt(action.value[action.value.length - 1], 10)
+      if (isNaN(seatCount)) {
+        return state
+      }
       return {
         ...state,
-        seatCount: action.seats
+        seatCount
       }
     case SUBMIT_RESERVATION_START:
       return {

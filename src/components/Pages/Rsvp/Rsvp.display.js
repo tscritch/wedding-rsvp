@@ -34,7 +34,7 @@ export default ({ guest, rsvpChoice, rsvped, loading, message, _chooseRsvp, _sub
   return (
     <React.Fragment>
       { (rsvped && guest.rsvp === true) && <Redirect to='/reserve-seats' /> }
-      { (rsvped && guest.rsvp === false) && <Redirect to='/receptions' /> }
+      { (rsvped && guest.rsvp === false) && <Redirect to='/not-attending' /> }
       { message && <Error message={message} /> }
       <h3 className={welcome}>Will you be joining us?</h3>
       <div className={rsvp}>

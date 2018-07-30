@@ -40,6 +40,7 @@ export default ({ guest, guests, guestChoice, _chooseGuest, _submitParty }) => {
         <Button
           text='Next'
           hasArrow
+          disabled={guestChoice < 0}
           _onClick={() => { _submitParty(guests[guestChoice]) }}
         />
       </div>

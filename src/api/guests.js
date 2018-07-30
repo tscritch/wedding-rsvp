@@ -18,9 +18,9 @@ export const rsvpGuestById = (id, answer) => {
   return fetch(uri(`guest/${id}/rsvp`), req)
 }
 
-export const reserveSeatsForGuest = (id, reserveSeats) => {
+export const reserveSeatsForGuest = (id, reservedSeats) => {
   const data = {
-    reserveSeats
+    reservedSeats
   }
   const req = {
     method: 'PUT',
@@ -29,5 +29,6 @@ export const reserveSeatsForGuest = (id, reserveSeats) => {
       'Content-Type': 'application/json'
     }
   }
+  console.log(req)
   return fetch(uri(`guest/${id}/reserve-seats`), req)
 }

@@ -15,8 +15,8 @@ const Attending = () => {
   return (
     <React.Fragment>
       <p className={attending}>
-        You’re all set! We can’t to see you both there!<br /><br />
-        We are registered at the following sites:
+        You’re all set! We can’t to see you there!<br /><br />
+        We have registered on the following sites:
       </p>
       <Link text={'Amazon'} url={'https://www.amazon.com/wedding/share/eden-and-tad'} />
       <Link text={'Wayfair'} url={'https://www.wayfair.com/registry/wedding/EdenAndTad'} />
