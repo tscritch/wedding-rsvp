@@ -42,7 +42,7 @@ export default ({ width, text, url }) => {
   `
 
   return (
-    <a href={url} className={link}>
+    <a href={url} className={link} target='_blank'>
       <div className={_text}>
         {text}
       </div>
