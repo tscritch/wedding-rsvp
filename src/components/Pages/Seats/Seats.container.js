@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import Seats from './Seats.display'
 import withLayout from '../../Layout/Layout.display'
 
-const mapStateToProps = ({ seat: { seatCount, loading, message, reserved }, guest: { guest } }) => ({
+const mapStateToProps = ({ seats: { seatCount, loading, message, reserved }, guest: { guest } }) => ({
   seatCount,
   loading,
   guest,

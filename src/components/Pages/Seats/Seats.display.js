@@ -22,7 +22,7 @@ export default ({ seatCount, loading, guest, message, reserved, _changeSeatCount
 
   return (
     <React.Fragment>
-      { reserved && <Redirect to='/rsvp' /> }
+      {reserved && <Redirect to='/attending' /> }
       <h3 className={welcome}>
         Great! We have reserverd {guest.seats > 1 ? `${guest.seats} seats` : '1 seat'} for you. How many of you will be attending?
       </h3>

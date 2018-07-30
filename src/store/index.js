@@ -6,9 +6,10 @@ import { initSagas } from './initSagas'
 
 import name from './reducers/name'
 import guest from './reducers/guest'
+import seats from './reducers/seats'
 
 export default () => {
-  const reducer = combineReducers({ name, guest })
+  const reducer = combineReducers({ name, guest, seats })
 
   const sagaMiddleware = saga()
 
