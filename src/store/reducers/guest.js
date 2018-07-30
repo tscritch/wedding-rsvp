@@ -29,7 +29,6 @@ export default (state = initialState, action) => {
       }
     case SUBMIT_RSVP_SUCCEDED:
       const guest = Object.assign({}, state.guest, { rsvp: action.answer })
-      console.log(guest)
       return {
         ...state,
         loading: false,

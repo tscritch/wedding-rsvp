@@ -30,7 +30,7 @@ export default ({ seatCount, loading, guest, message, reserved, _changeSeatCount
         <Input
           value={seatCount}
           _onChange={_changeSeatCount}
-          placeholder='Last Name'
+          placeholder='Seats'
         />
         <Button
           text='Next'
