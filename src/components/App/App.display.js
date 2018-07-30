@@ -6,6 +6,7 @@ import Name from '../Pages/Name/Name.container'
 import NotAttending from '../Pages/NotAttending.display'
 import OurStory from '../Pages/OurStory.display'
 import Rsvp from '../Pages/Rsvp/Rsvp.container'
+import Seats from '../Pages/Seats/Seats.container'
 
 class App extends React.Component {
   render () {
@@ -17,6 +18,7 @@ class App extends React.Component {
           <Route path='/our-story' component={OurStory} />
           <Route path='/choose-name' component={ChooseName} />
           <Route path='/not-attending' component={NotAttending} />
+          <Route path='/reserve-seats' component={Seats} />
           <Route path='/attending' component={Attending} />
         </React.Fragment>
       </Router>
