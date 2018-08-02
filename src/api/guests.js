@@ -29,6 +29,5 @@ export const reserveSeatsForGuest = (id, reservedSeats) => {
       'Content-Type': 'application/json'
     }
   }
-  console.log(req)
   return fetch(uri(`guest/${id}/reserve-seats`), req)
 }

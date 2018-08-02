@@ -15,7 +15,6 @@ function * fetchName (name) {
   try {
     const response = yield call(api.findGuestByName, name)
     const data = yield apply(response, response.json)
-    console.log(data)
     if (data.length > 1) {
       yield put(nameFetchSuccededWithMany(data))
     } else if (data.length === 1) {
