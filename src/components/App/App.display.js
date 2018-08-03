@@ -28,7 +28,6 @@ class App extends React.Component {
           <Route path='/not-attending' component={NotAttending} />
           <Route path='/reserve-seats' component={Seats} />
           <Route path='/attending' component={Attending} />
-          <Route render={() => <div>Not Found</div>} />
         </React.Fragment>
         { /* </Switch>
       </CSSTransition>
