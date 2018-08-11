@@ -12,10 +12,21 @@ const Attending = () => {
     text-align: center; 
   `
 
+  const extra = css`
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    max-width: 50%;
+  `
+
   return (
     <React.Fragment>
       <p className={attending}>
-        You’re all set! We can’t wait to see you there!<br /><br />
+        You’re all set! We can’t wait to see you there!<br />
+        <span className={extra}>
+        The reception will be held at a personal residence so parking will be limited.
+        As the venue is only 5 minutes away from the wedding we suggest carpooling.
+        </span>
+        <br /><br />
         We have registered on the following sites:
       </p>
       <Link text={'Amazon'} url={'https://www.amazon.com/wedding/share/eden-and-tad'} />
