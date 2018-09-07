@@ -5,7 +5,7 @@ const initialState = {
   rsvpChoice: -1
 }
 
-export default (state = initialState, action) => {
+const guest = (state = initialState, action) => {
   switch (action.type) {
     case CHOOSE_GUEST:
       return {
@@ -45,3 +45,5 @@ export default (state = initialState, action) => {
       return state
   }
 }
+
+export default guest

@@ -9,7 +9,7 @@ const initialState = {
   seatCount: ''
 }
 
-export default (state = initialState, action) => {
+const seats = (state = initialState, action) => {
   switch (action.type) {
     case SEAT_CHANGE:
       if (!action.value) {
@@ -48,3 +48,5 @@ export default (state = initialState, action) => {
       return state
   }
 }
+
+export default seats

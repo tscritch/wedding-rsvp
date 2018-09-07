@@ -10,7 +10,7 @@ const initialState = {
   lastName: ''
 }
 
-export default (state = initialState, action) => {
+const name = (state = initialState, action) => {
   switch (action.type) {
     case LAST_NAME_CHANGE:
       return {
@@ -45,3 +45,5 @@ export default (state = initialState, action) => {
       return state
   }
 }
+
+export default name
